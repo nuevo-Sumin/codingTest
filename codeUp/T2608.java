@@ -13,8 +13,22 @@ OX
 XO
 XX
 이다.
+투표자 수 n이 정수로 입력된다.(1 <= n <= 7)
+나올 수 있는 모든 경우의 수를 출력한다.
+찬성은 알파벳 대문자 O, 반대는 알파벳 대문자 X로 표시한다.
+//2의 n승을 어떻게 구할 것인가? 가 아니라 출력 예시를 표현해야하는군.
+반복문을 돌면서 해보자.
+* 
 */
-
+		int n = 3;
+		boolean vote = true;
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				System.out.println("k");
+			}
+			System.out.println();
+		}
+		
 	}
 
 }
