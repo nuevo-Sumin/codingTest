@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class T1510 {
 
 	public static void main(String[] args) {
-/* 2차원 배열?!
+/* 2차원 배열
 마방진(magic square)이란 가로, 세로, 대각선의 합이 같은 사각형을 말한다.
 홀수 n을 입력으로 받아 n*n 홀수 마방진을 만들어 보자.
 만드는 방법은 여러가지 방법이 있지만, 아래와 같은 방법을 이용하여 구현해보자.
@@ -33,7 +33,7 @@ public class T1510 {
 		
 		for(int i = 2; i <= n * n; i++) {
 			if (i % n == 1) {
-				j = j + 1 == n? j + 1 - n: j+1;
+				j = j + 1 == n? j + 1 - n: j + 1;
 			} else {
 				j = j - 1 < 0 ? j - 1 + n : j - 1;
 				k = k + 1 == n ? k + 1 - n : k + 1;
