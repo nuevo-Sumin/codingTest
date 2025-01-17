@@ -37,24 +37,25 @@ XXX
 
 
 */	
-//		Scanner sc = new Scanner(System.in);
-		int scan = 3; //2진수 자리수 - 2의 3승 계산할 계획
-		int[] arr = new int[3]; // 자리값 8을 표현할 배열
-//		int[] arr = new int[1 << scan]; // 자리값 8을 표현할 배열
+		Scanner sc = new Scanner(System.in);
+		int scan = sc.nextInt(); //2진수 자리수: 000~111 3자리가 된다. 
+		int[] arr = new int[scan]; // 3자리 OXO를 표현할 배열
 
 		// 이진법으로 변환할 숫자는 for문의 인덱스 값으로 하고, 인덱스 값을 따로 지정
-		int cnt = 0;
-		for (int i = 0; i < (1 << scan); i++) {
+		int cnt = 0; //인덱스로 쓸 값
+		for (int i = 0; i < (1 << scan); i++) { //8번 반복하는 이유: 경우의 수가 2의 3승이니까.
 			int j = 0;
+			//여기서부터는 10진수를 2진수로 변환. 0 ~ 8이라는 경우의 수를 2진수로 변환할 것
 			while (j < scan) {
 				arr[j++] = i % 2;
 				i /= 2;
 			}
+			//2진수로 변환한 01을 OX로 변환할 것. 이때 거꾸로 출력해야 2진수로 보임.
 			for (int k = scan - 1; k >= 0; k--) {
 				 String answer = arr[k] == 0 ? "O" : "X" ;
 				 System.out.print(answer);
 			}
-			System.out.println();
+			System.out.println(); //자리수표현이 끝나면 한줄 띄운다. 다시 for문의 처음으로 이동.
 			i = cnt++;
 		}
 		
