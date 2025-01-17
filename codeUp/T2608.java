@@ -16,18 +16,27 @@ XX
 투표자 수 n이 정수로 입력된다.(1 <= n <= 7)
 나올 수 있는 모든 경우의 수를 출력한다.
 찬성은 알파벳 대문자 O, 반대는 알파벳 대문자 X로 표시한다.
-//2의 n승을 어떻게 구할 것인가? 가 아니라 출력 예시를 표현해야하는군.
+//n의 n승을 어떻게 구할 것인가? 
+가 아니라
+경우의 수는 n의 2개, 모든 투표는 n의 n승개
+출력 예시를 표현해야하는군.
 반복문을 돌면서 해보자.
-* 
+* 1) 바깥쪽 for문에서 한명의 투표결과인 O,안쪽은 X
+* 2) 배열에 담는 건 어떨까?
+* 바깥 for문 1행은 n의 1번째 반복한 안쪽 for문(OX의 조합 -
+* 2행은 n의 2번째 반복한 OX의 조합
 */
 		int n = 3;
-		boolean vote = true;
-		for (int i = 0; i < n; i++) {
+		int v = 1;
+		for(int i = 0; i < n * n; i++) {
 			for (int j = 0; j < n; j++) {
-				System.out.println("k");
+				String vote = v < 0 ? "X" : "O";
+				System.out.print(vote);
+				v = -v;
 			}
 			System.out.println();
-		}
+		} 
+		
 		
 	}
 
